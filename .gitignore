@@ -1,0 +1,11 @@
+# System & Python
+.DS_Store
+__pycache__/
+*.pyc
+
+# Environment & Config
+.env
+venv/
+
+# Database
+app/db/
