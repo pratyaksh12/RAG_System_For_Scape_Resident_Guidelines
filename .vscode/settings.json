@@ -4,6 +4,7 @@
         "./scape-rag-system/venv/lib/python3.9/site-packages",
         "./scape-rag-system/venv/lib/python3.10/site-packages",
         "./scape-rag-system/venv/lib/python3.11/site-packages",
-        "./scape-rag-system/venv/lib/python3.12/site-packages"
+        "./scape-rag-system/venv/lib/python3.12/site-packages",
+        "./scape-rag-system/app"
     ]
 }

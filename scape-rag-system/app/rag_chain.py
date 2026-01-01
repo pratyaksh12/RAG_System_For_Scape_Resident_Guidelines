@@ -49,6 +49,7 @@ def save_to_file(question, answer):
 if __name__ == "__main__":
     question = "Can I use communal areas?"
     response = rag_chain.invoke(question)
+    print("Answer:", response)
     save_to_file(question, response)
 
 
