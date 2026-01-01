@@ -23,8 +23,8 @@ def ingest_data():
     # chunking
     
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size = 1000,
-        chunk_overlap = 100
+        chunk_size = 600,
+        chunk_overlap = 150
     )
     
     chunks = text_splitter.split_documents(docs)

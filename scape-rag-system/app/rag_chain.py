@@ -15,14 +15,10 @@ retriever = vector_store.as_retriever(search_kwargs={"k" : 5})
 
 # define the prompt
 
-template = """You are a helpful Scape Resident Assistant.
-Answer the question based ONLY on the following context.
-If the answer is not in the context, say "I cannot find this information in the resident guidelines."
-Do not make up rules.
-Context:
+template = """Answer the question based ONLY on the following context:
 {context}
-Question:
-{question}
+
+Question: {question}
 """
 
 prompt = ChatPromptTemplate.from_template(template)
@@ -41,8 +37,18 @@ rag_chain = (
     | StrOutputParser()
 )
 
+def save_to_file(question, answer):
+    with open("scape_answer.txt", "a") as f:
+        f.write(f"_____Query_____\n")
+        f.write(f"Question: {question}\n")
+        f.write(f"Question: {answer}\n")  
+        
+        
+        
+
 if __name__ == "__main__":
-    response = rag_chain.invoke("Will I be responsible for false fire alarm trigger?")
-    print("Answer:", response)
+    question = "Can I use communal areas?"
+    response = rag_chain.invoke(question)
+    save_to_file(question, response)
 
 
