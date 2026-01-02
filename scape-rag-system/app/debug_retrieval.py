@@ -7,7 +7,7 @@ load_dotenv()
 DB_PATH = "app/db"
 
 def debug_search(query):
-    print(f"🔎 Searching for: '{query}'")
+    print(f"Searching for: '{query}'")
     
     embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
     vector_store = Chroma(persist_directory=DB_PATH, embedding_function=embeddings)
